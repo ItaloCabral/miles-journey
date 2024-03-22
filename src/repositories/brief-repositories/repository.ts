@@ -5,5 +5,5 @@ export interface BriefRepository {
     find(id: string): Promise<Brief | null>;
     update(id: string, data: Partial<Brief>): Promise<Brief | null>;
     delete(id: string): Promise<boolean>;
-    list(): Promise<Brief[]>;
+    list(): Promise<Partial<Brief>[]>;
 }

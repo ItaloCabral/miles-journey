@@ -43,7 +43,15 @@ export class InMemoryBriefRepository implements BriefRepository {
         return true;
     }
 
-    async list(): Promise<Brief[]> {
-        return this.briefs;
+    async list(): Promise<Partial<Brief>[]> {
+        const briefs = this.briefs;
+
+        const briefsCopy = briefs.map(brief => {
+            return {
+                ...brief.attributes
+            }
+        });
+
+        return briefsCopy;
     }
 }

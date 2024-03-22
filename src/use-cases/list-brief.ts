@@ -7,7 +7,7 @@ type ListBriefRequest = {
 
 export type ListBriefResponse = {
     data: {
-        briefs: Brief[]
+        briefs: Partial<Brief>[]
     }
 }
 

@@ -1,5 +1,5 @@
-import { Brief } from "src/entities/brief";
-import { BriefRepository } from "src/repositories/brief-repositories/repository";
+import { Brief } from "../entities/brief";
+import { BriefRepository } from "../repositories/brief-repositories/repository";
 
 type CreateBriefRequest = {
     imageUrl: string;
