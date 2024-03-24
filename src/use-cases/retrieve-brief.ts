@@ -5,7 +5,7 @@ type RetrieveBriefRequest = {
     id: string;
 }
 
-type RetrieveBriefResponse = Brief;
+type RetrieveBriefResponse = Partial<Brief>;
 
 export class RetrieveBriefUseCase {
 
@@ -21,7 +21,7 @@ export class RetrieveBriefUseCase {
 
         if(!brief) throw new Error('Brief not found');
 
-        return brief;
+        return { ...brief.attributes };
 
     }
 

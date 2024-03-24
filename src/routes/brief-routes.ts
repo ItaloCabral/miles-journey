@@ -8,9 +8,17 @@ const BriefRepository = new InMemoryBriefRepository()
 
 const briefController = new BriefController(BriefRepository)
 
-router.post('/', briefController.create.bind(briefController));
+router.post('/briefs/', briefController.create.bind(briefController));
 
-router.get('/', briefController.list.bind(briefController));
+router.get('/briefs/', briefController.list.bind(briefController));
+
+router.get('/briefs/:id', briefController.retrieve.bind(briefController));
+
+router.put('/briefs/:id', briefController.update.bind(briefController));
+
+router.delete('/briefs/:id', briefController.delete.bind(briefController));
+
+// router.get('/populate', briefController.populate.bind(briefController));
 
 export {
     router as briefRoutes
