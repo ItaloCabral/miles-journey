@@ -48,8 +48,6 @@ describe('Delete brief using a valid id', () => {
     it('throws an error when no brief is found', async () => {
         const { deleteBriefUseCase } = setup();
 
-        console.log(await deleteBriefUseCase.execute({ id: 'invalid-id' }));
-
         expect(
             await deleteBriefUseCase.execute({
                 id: 'invalid-id'
